@@ -15,5 +15,6 @@ class Node{
 //now define functions here
 int maximum(int x, int y);
 int minimum(int x, int y);
+int getHeight(Node* node);
 
 #endif
