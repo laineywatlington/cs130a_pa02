@@ -12,4 +12,11 @@ int maximum(int x, int y){
 }
 
 //finds min of two ints
-int 
+int minimum(int x, int y){
+  if(x < y){
+    return x;
+  }
+  else{
+    return y;
+  }
+}
