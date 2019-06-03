@@ -16,5 +16,6 @@ class Node{
 int maximum(int x, int y);
 int minimum(int x, int y);
 int getHeight(Node* node);
-
+Node* newNode(int key);
+int balanceFactor(Node* node);
 #endif
