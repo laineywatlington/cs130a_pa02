@@ -20,3 +20,13 @@ int minimum(int x, int y){
     return y;
   }
 }
+
+//get height of tree rooted at node
+int getHeight(Node* node){
+  if(node == NULL){
+    return 0;
+  }
+  else{
+    return (node->height);
+  }
+}
