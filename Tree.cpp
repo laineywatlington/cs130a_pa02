@@ -51,6 +51,7 @@ int balanceFactor(Node* node){
   else{
     int leftHeight = height(node -> leftchild);
     int rightHeight = height(node -> rightchild);
-    return (leftHeight - rightHeight);
+    int difference = leftHeight - rightHeight;
+    return difference;
   }
 }
