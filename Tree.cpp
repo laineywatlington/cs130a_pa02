@@ -38,9 +38,9 @@ void preOrder(Node* root){
     //visit root
     cout << root -> key << " ";
     //traverse left subtree
-    preOrder(root -> left);
+    preOrder(root -> leftchild);
     //traverse right subtree
-    preOrder(root -> right);
+    preOrder(root -> rightchild);
   }
 }
 
@@ -121,7 +121,7 @@ Node* insert(Node* node, int key, int* r, int* v){
     return node;
   }
   //heights
-  node -> height = 1 + maximum(getHeight(node -> leftchild), hetHeight(node -> rightchild));
+  node -> height = 1 + maximum(getHeight(node -> leftchild), getHeight(node -> rightchild));
   //CHECK IF AVL PROPERTY IS VIOLATED
   int balanceCheck = balanceFactor(node);
   //if balance property violated, we fix with either a ll, lr, rr, rl rotation
