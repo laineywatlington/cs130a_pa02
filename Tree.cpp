@@ -174,3 +174,87 @@ int lookup(Node* root, int search, int *v){
     return -1;
   }
 }
+
+void printTree(Node* root, int* x){
+    if(root != NULL){
+      if (root -> leftchild != NULL || root -> rightchild != NULL){
+        cout << string(*x*2, ' ' );
+        cout << "Node(" << root -> key << ", h=" << root -> height - 1 << "):" << endl;
+        int y = *x + 1;
+        printTree(root -> leftchild, &y);
+        printTree(root -> rightchild, &y);
+      }
+      if (root -> leftchild == NULL && root -> rightchild == NULL){
+        cout << string(*x*2, ' ' );
+        cout << "Leaf(" << root -> key << ")" << endl;
+      }
+    }
+    else{
+      cout << string(*x*2, ' ' );
+      cout << "Null" << endl;
+    }
+}
+
+void pll(Node* root, int *ubound, int *lbound, vector<pair <int,int>> *mem){
+    if(root != NULL){
+        int before = balanceFactor(root);
+        if(before == -1){
+          *lbound = root -> key + 1;
+        }
+        if(before == 1 && root -> leftchild != NULL && root -> leftchild -> leftchild == NULL){
+          *ubound = root -> leftchild -> key - 1;
+          mem -> push_back(make_pair(*lbound, *ubound));
+            *ubound = 1000000000;
+            *lwr = -1000000000;
+        }
+        pll(root -> leftchild, ubound, lbound, mem);
+        pll(root -> rightchild, ubound, lbound, mem);
+    }
+}
+
+void prr(Node* root, int* ubound, int* lbound, vector<pair<int,int>> *mem){
+  if (root != NULL){
+    int before = balanceFactor(root);
+    if(before == 1){
+      *ubound = root -> key - 1;
+    }
+    if(before == -1 && root -> rightchild != NULL && root -> rightchild -> rightchild == NULL){
+      *lbound = root -> rightchild -> key + 1;
+      mem -> push_back(make_pair(*lbound, *ubound));
+      *ubound = 1000000000;
+      *lbound = -1000000000;
+    }
+    prr(root -> leftchild, ubound, lbound, mem);
+    prr(root -> rightchild, ubound, lbound, mem);
+  }
+}
+
+void plr(Node* root, int* ubound, int* lbound, vector<pair<int,int>> *mem){
+  if (root != NULL){
+    int before = balanceFactor(root);
+    if(before == 1 && root -> leftchild != NULL && root -> leftchild -> rightchild == NULL){
+      *ubound = root -> key - 1;
+      *lbound = root -> leftchild -> key + 1;
+      mem -> push_back(make_pair(*lbound, *ubound));
+      *ubound = 1000000000;
+      *lbound = -1000000000;
+    }
+    plr(root -> leftchild, ubound, lbound, mem);
+    plr(root -> rightchild, ubound, lbound, mem);
+  }
+}
+
+void prl(Node* root, int* ubound, int* lbound, vector<pair<int,int>> *mem){
+  if (root != NULL){
+    int before = balanceFactor(root);
+    if(before == -1 && root -> rightchild != NULL && root -> rightchild -> leftchild == NULL){
+      *lbound = root -> key + 1;
+      *ubound = root -> rightchild -> key - 1;
+      mem -> push_back(make_pair(*lbound, *ubound));
+      *ubound = 1000000000;
+      *lbound = -1000000000;
+    }
+    prl(root -> leftchild, ubound, lbound, mem);
+    prl(root -> rightchild, ubound, lbound, mem);
+  }
+}
