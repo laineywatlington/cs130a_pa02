@@ -78,8 +78,8 @@ Node* rotateLeft(Node* c){
   b -> leftchild = c;
   c -> rightchild = a;
   //heights
-  c -> getHeight = maximum(getHeight(c -> leftchild), getHeight(c -> rightchild)) + 1;
-  b -> getHeight = maximum(getHeight(b -> leftchild), getHeight(b -> rightchild)) + 1;
+  c -> height = maximum(getHeight(c -> leftchild), getHeight(c -> rightchild)) + 1;
+  b -> height = maximum(getHeight(b -> leftchild), getHeight(b -> rightchild)) + 1;
   //returns root of subtree
   return b;
 }
