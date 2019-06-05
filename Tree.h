@@ -25,9 +25,9 @@ int balanceFactor(Node* node);
 Node* insert(Node* node, int key, int* r, int* v);
 int lookup(Node* root, int search, int* v);
 //printing/parsing
-/*void printTree(Node* root, int* c);
-void printLL(Node* root, int* ub, int* lb, vector<pair<int, int>> *store);
-void printRR
-void printLR
-void printRL*/
+void printTree(Node* root, int* x);
+void pll(Node* root, int* ubound, int* lbound, vector<pair<int, int>> *mem);
+void prr(Node* root, int* ubound, int* lbound, vector<pair<int, int>> *mem);
+void plr(Node* root, int* ubound, int* lbound, vector<pair<int, int>> *mem);
+void prl(Node* root, int* ubound, int* lbound, vector<pair<int, int>> *mem);
 #endif
