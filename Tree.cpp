@@ -160,10 +160,17 @@ int lookup(Node* root, int search, int *v){
     }
     else if(search < root -> key){
       *v = *v + 1;
-      return lookup(root -> leftchild
+      return lookup(root -> leftchild, search, v);
     }
-    else if(search > root -> key){}
-    else{}
+    else if(search > root -> key){
+      *v = *v + 1;
+      return lookup(root -> rightchild, search, v);
+    }
+    else{
+      return -1;
+    }
   }
-  else{}
+  else{
+    return -1;
+  }
 }
