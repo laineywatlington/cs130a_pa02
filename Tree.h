@@ -21,11 +21,11 @@ void preOrder(Node* root);
 Node* newNode(int key);
 Node* rotateRight(Node* node);
 Node* rotateLeft(Node* node);
-Node* insert(Node* node, int key, int* rotations, int* visits);
+Node* insert(Node* node, int key, int* r, int* v);
 
 //checks
 int balanceFactor(Node* node);
-int lookup(Node* root, int searchFor, int* visits);
+int lookup(Node* root, int search, int* v);
 //printing/parsing
 void printTree(Node* root, int* c);
 void printLL
