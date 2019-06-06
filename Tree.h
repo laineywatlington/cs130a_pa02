@@ -1,6 +1,7 @@
 #ifndef TREE_H
 #define TREE_H
 
+#include <vector>
 using namespace std;
 
 //create node class, this is what we will insert into tree
