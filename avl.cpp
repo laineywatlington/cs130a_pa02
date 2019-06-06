@@ -35,21 +35,21 @@ void clear(Node* root){
 
 //insert tests
 Node* insertTests(Node* root, vector<int> numArray){
-  int r = 0;
-  float arrsize = numArray.size();
-  int v = 0;
-  int temp;
-  float added = 0;
-  for (int i = 0; i < arrsize; i++) {  
-    if(lookup(root, numArray[i], &temp) != numArray[i]){
-      added = added + 1;
+	int r = 0;
+	int v = 0;
+	int temp;
+	float toAdd = numArray.size();
+	float totalAdded = 0;
+	for (int i = 0; i < toAdd; i++) {  
+		if (lookup(root, numArrayc[i], &temp) != numArray[i]){
+			totalAdded += 1;
+		}
+        root = insert(root, numArray[i], &r, &v);
     }
-    root = insert(root, numArray[i], &r, &v);
-  }
-  cout << "Added " << added << " of " << arrsize << " nodes." << endl;
-  //amortized stats
-  cout << "Visited " << v << " (" << v/arrsize << ") nodes and performed " << r << " (" << r/arrsize << ") rotations.\n" << endl;
-  return root;
+    cout << "Added " << totalAdded << " of " << toAdd << " nodes." << endl;
+    //amortized stats
+    cout << "Visited " << v << " (" << v/toAdd << ") nodes and performed " << r << " (" << r/toAdd << ") rotations.\n" << endl;
+    return root;
 }
 
 //lookup tests
