@@ -106,6 +106,7 @@ Node* insert(Node* node, int key, int* r, int* v){
   //if the node doesnt exist, create a new node
   if(node == NULL){
     return (newNode(key));
+    *v += 1;
   }
   //if key to be inserted is less than nodes key
   //we recursively try to insert it at nodes left child
