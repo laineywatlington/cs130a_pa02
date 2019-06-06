@@ -120,7 +120,7 @@ Node* insert(Node* node, int key, int* r, int* v){
   }
   //cant have two nodes with same key in tree
   else{
-    //*v += 1;
+    *v += 1;
     return node;
   }
   //heights
