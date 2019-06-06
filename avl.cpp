@@ -117,7 +117,7 @@ int main(int argc, char* argv[]){
           int memSize = mem.size();
           if (memSize > 0){
             cout << "The following inserts would cause a left-left rotation:" << endl;
-            for (int i=0; i<n; i++){
+            for (int i = 0; i < memSize; i++){
               if(mem[i].first == mem[i].second){
                 cout << mem[i].first;
               }
@@ -173,7 +173,7 @@ int main(int argc, char* argv[]){
           int memSize = mem.size();
           if (memSize > 0){
             cout << "The following inserts would cause a left-right rotation:" << endl;
-            for (int i=0; i<n; i++){
+            for (int i = 0; i < memSize; i++){
               if(mem[i].first == mem[i].second){
                 cout << mem[i].first;
               }
