@@ -110,17 +110,17 @@ Node* insert(Node* node, int key, int* r, int* v){
   //if key to be inserted is less than nodes key
   //we recursively try to insert it at nodes left child
   if(key < node -> key){
-    *v = *v + 1;
+    *v += 1;
     node -> leftchild = insert(node -> leftchild, key, r, v);
   }
   //similarly for the right child if key to be inserted is larger than nodes key
-  if(key > node -> key){
-    *v = *v + 1;
+  else if(key > node -> key){
+    *v += 1;
     node -> rightchild = insert(node -> rightchild, key, r, v);
   }
   //cant have two nodes with same key in tree
   else{
-    *v = *v + 1;
+    //*v += 1;
     return node;
   }
   //heights
