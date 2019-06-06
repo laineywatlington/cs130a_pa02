@@ -208,7 +208,7 @@ void pll(Node* root, int *ubound, int *lbound, vector<pair <int,int>> *mem){
           *ubound = root -> leftchild -> key - 1;
           mem -> push_back(make_pair(*lbound, *ubound));
             *ubound = 1000000000;
-            *lwr = -1000000000;
+            *lbound = -1000000000;
         }
         pll(root -> leftchild, ubound, lbound, mem);
         pll(root -> rightchild, ubound, lbound, mem);
