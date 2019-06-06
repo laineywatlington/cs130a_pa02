@@ -1,6 +1,9 @@
 #include "Tree.h"
 #include <iostream>
-
+#include <fstream>
+#include <string>
+#include <unistd.h>
+#include <bits/stdc++.h>
 //finds max of two ints
 int maximum(int x, int y){
   if(x < y){
