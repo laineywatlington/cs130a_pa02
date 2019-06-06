@@ -207,8 +207,8 @@ void pll(Node* root, int *ubound, int *lbound, vector<pair <int,int>> *mem){
         if(before == 1 && root -> leftchild != NULL && root -> leftchild -> leftchild == NULL){
           *ubound = root -> leftchild -> key - 1;
           mem -> push_back(make_pair(*lbound, *ubound));
-            *ubound = 1000000000;
-            *lbound = -1000000000;
+            *ubound = 2147483647; //largest in that can be made w 32 bits
+            *lbound = -2147483647; //smallest int that can be made w 32 bits
         }
         pll(root -> leftchild, ubound, lbound, mem);
         pll(root -> rightchild, ubound, lbound, mem);
@@ -224,8 +224,8 @@ void prr(Node* root, int* ubound, int* lbound, vector<pair<int,int>> *mem){
     if(before == -1 && root -> rightchild != NULL && root -> rightchild -> rightchild == NULL){
       *lbound = root -> rightchild -> key + 1;
       mem -> push_back(make_pair(*lbound, *ubound));
-      *ubound = 1000000000;
-      *lbound = -1000000000;
+      *ubound = 2147483647;
+      *lbound = -2147483647;
     }
     prr(root -> leftchild, ubound, lbound, mem);
     prr(root -> rightchild, ubound, lbound, mem);
@@ -239,8 +239,8 @@ void plr(Node* root, int* ubound, int* lbound, vector<pair<int,int>> *mem){
       *ubound = root -> key - 1;
       *lbound = root -> leftchild -> key + 1;
       mem -> push_back(make_pair(*lbound, *ubound));
-      *ubound = 1000000000;
-      *lbound = -1000000000;
+      *ubound = 2147483647;
+      *lbound = -2147483647;
     }
     plr(root -> leftchild, ubound, lbound, mem);
     plr(root -> rightchild, ubound, lbound, mem);
@@ -254,8 +254,8 @@ void prl(Node* root, int* ubound, int* lbound, vector<pair<int,int>> *mem){
       *lbound = root -> key + 1;
       *ubound = root -> rightchild -> key - 1;
       mem -> push_back(make_pair(*lbound, *ubound));
-      *ubound = 1000000000;
-      *lbound = -1000000000;
+      *ubound = 2147483647;
+      *lbound = -2147483647;
     }
     prl(root -> leftchild, ubound, lbound, mem);
     prl(root -> rightchild, ubound, lbound, mem);
