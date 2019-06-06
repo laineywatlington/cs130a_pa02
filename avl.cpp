@@ -41,7 +41,7 @@ Node* insertTests(Node* root, vector<int> numArray){
 	float toAdd = numArray.size();
 	float totalAdded = 0;
 	for (int i = 0; i < toAdd; i++) {  
-		if (lookup(root, numArrayc[i], &temp) != numArray[i]){
+		if (lookup(root, numArray[i], &temp) != numArray[i]){
 			totalAdded += 1;
 		}
         root = insert(root, numArray[i], &r, &v);
