@@ -65,7 +65,7 @@ void lookupTests(Node* root, vector<int> find){
   }
   int foundSize = found.size();
   cout << "Found " << foundSize << " of " << findSize << " nodes: [";
-  for (int i=0; i<n; i++){
+  for (int i = 0; i < foundSize; i++){
     cout << found[i];
     if(i < foundSize - 1){
       cout << ", ";
