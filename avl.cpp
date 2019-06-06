@@ -1,6 +1,10 @@
 #include "Tree.h"
 #include <iostream>
+#include <fstream>
 #include <string>
+#include <unistd.h>
+#include <bits/stdc++.h>
+
 using namespace std;
 
 //first, extract all ints from input files and store in vector
