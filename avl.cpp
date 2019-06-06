@@ -11,7 +11,7 @@ using namespace std;
 vector<int> int_vector(string array){
   stringstream input;
   vector<int> vec;
-  inout << array;
+  input << array;
   string temp; 
   int number; 
   while (!input.eof()){ 
